@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:enabled="true"
+        app:showAsAction="ifRoom"
+        android:id="@+id/beranda_nav"
+        android:icon="@drawable/home_nav"
+        android:title="Beranda" />
+
+    <item
+        android:enabled="true"
+        app:showAsAction="ifRoom"
+        android:id="@+id/bantuan_nav"
+        android:icon="@drawable/bantuan_nav"
+        android:title="Bantuan" />
+
+    <item
+        android:enabled="true"
+        app:showAsAction="ifRoom"
+        android:id="@+id/cari_nav"
+        android:icon="@drawable/cari_nav"
+        android:title="Cari" />
+
+    <item
+        android:enabled="true"
+        app:showAsAction="ifRoom"
+        android:id="@+id/notifikasi_nav"
+        android:icon="@drawable/notifikasi_nav"
+        android:title="Notifikasi" />
+
+    <item
+        android:enabled="true"
+        app:showAsAction="ifRoom"
+        android:id="@+id/akun_nav"
+        android:icon="@drawable/akun_nav"
+        android:title="Akun" />
+
+</menu>
