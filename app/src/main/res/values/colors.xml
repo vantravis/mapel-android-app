@@ -6,8 +6,12 @@
 
     <color name="colorWhite">#FFF</color>
     <color name="colorGrey2">#c6c6c6</color>
+    <color name="colorGrey">#ededed</color>
+
+    <color name="colorBlack">#0C0A0A</color>
 
     <color name="colorBarProgress">#FFC107</color>
 
+    <color name="colorGreen">#37CA0D</color>
 
 </resources>

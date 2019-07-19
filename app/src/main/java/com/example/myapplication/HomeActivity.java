@@ -107,12 +107,15 @@ public class HomeActivity extends AppCompatActivity implements LocationListener,
                     case R.id.beranda_nav:
 
                         sharedPrefManager.setNavSelected(SharedPrefManager.NAV_SELECTED, 1);
+                        setFragment(berandaFragment);
 
+/*
                         if (!sharedPrefManager.getHave_search_loc()) {
                             System.out.println("item id");
                             kota = sharedPrefManager.getCity();
                             updateView();
                         }
+*/
 
                         return true;
 
@@ -149,7 +152,9 @@ public class HomeActivity extends AppCompatActivity implements LocationListener,
             }
         });
 
-        setUpGClient();
+            setUpGClient();
+
+
 
     }
 
@@ -200,7 +205,8 @@ public class HomeActivity extends AppCompatActivity implements LocationListener,
 
     @Override
     public void onLocationChanged(Location mLocation) {
-        PopupUtil.dismissDialog();
+        PopupUtil.showMsg(this, "Location Change", Toast.LENGTH_SHORT);
+
         myLocation = mLocation;
 
         lat = mLocation.getLatitude();
@@ -208,7 +214,9 @@ public class HomeActivity extends AppCompatActivity implements LocationListener,
         sharedPrefManager.setHave_search_loc(SharedPrefManager.have_search_loc, false);
         LatLng currentLoc = new LatLng(lat, lng);
 
-        convertToAddress(lat, lng);
+            convertToAddress(lat, lng);
+
+
     }
 
     @Override
@@ -317,8 +325,8 @@ public class HomeActivity extends AppCompatActivity implements LocationListener,
                 if (permissionLocation == PackageManager.PERMISSION_GRANTED) {
                     myLocation = LocationServices.FusedLocationApi.getLastLocation(googleApiClient);
                     LocationRequest locationRequest = new LocationRequest();
-                    locationRequest.setInterval(3000);
-                    locationRequest.setFastestInterval(3000);
+                    //locationRequest.setInterval(3000);
+                    //locationRequest.setFastestInterval(3000);
                     locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
                     LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()
                             .addLocationRequest(locationRequest);
